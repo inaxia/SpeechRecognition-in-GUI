@@ -35,15 +35,8 @@ def listenToUser():
                 print("Recognizing...")
                 recognizedText = bot.recognize_google(audioCapture)
 
-                if 'leave'or 'stop' or 'clear' in recognizedText:
-                    isListening = False
-
-                else: 
-                    addTextToFile(recognizedText + "\n")
-                    print(recognizedText)
-
-                # addTextToFile(recognizedText + "\n")
-                # print(recognizedText)
+                addTextToFile(recognizedText + "\n")
+                print(recognizedText)
 
             except:
                 print("Say that again!")
@@ -58,11 +51,11 @@ welcomeText.place(relx=0.5, rely=0.35, anchor='center')
 
 # Listen button
 listenButton = Button(mainFrame, text='Listen', bg='#D4D4D3', height=2, width=10, command=lambda: listenToUser())
-listenButton.place(relx=0.5, rely=0.65, anchor='center')
+listenButton.place(relx=0.4, rely=0.65, anchor='center')
 
 # Stop button
-listenButton = Button(mainFrame, text='Listen', bg='#D4D4D3', height=2, width=10, command=lambda: listenToUser())
-listenButton.place(relx=0.5, rely=0.65, anchor='center')
+StopButton = Button(mainFrame, text='Stop', bg='#D4D4D3', height=2, width=10, command=window.destroy)
+StopButton.place(relx=0.6, rely=0.65, anchor='center')
 
 # To open the window
 window.mainloop()
